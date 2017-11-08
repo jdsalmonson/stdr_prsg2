@@ -18,9 +18,9 @@
 	<remap from="cmd_vel" to="robot0/cmd_vel"/>
 	</node>
 
-       
+       <param name="quadrille_angle_fac" type="double" value="1.0" />       
 	<node pkg="quadrille" type="quadrille.py" name="quadrille">
-	<param name="quadrille_angle_fac" type="double" value="1.0" />
+	<!-- <param name="quadrille_angle_fac" type="double" value="1.0" /> -->
 	<remap from="cmd_vel" to="robot0/cmd_vel" />
 	</node>
 
