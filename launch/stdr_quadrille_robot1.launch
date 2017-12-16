@@ -1,0 +1,6 @@
+<launch>
+
+	<node pkg="stdr_robot" type="robot_handler" name= "stdr_robot1"
+	args="add $(find stdr_prsg2)/robots/prsg2_jay_robot.yaml 3.5 6 -1.57" />
+
+</launch>

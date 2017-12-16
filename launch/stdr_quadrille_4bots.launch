@@ -1,0 +1,26 @@
+<launch>
+	<!-- Start teleop -->
+	<node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop">
+	<remap from="cmd_vel" to="robot0/cmd_vel"/>
+	</node>
+
+	<!-- Start quadrille for robot 0: -->
+
+	<param name="quadrille_angle_fac" type="double" value="1.0" />       
+	<node pkg="quadrille" type="quadrille.py" name="quadrille0">
+	<remap from="cmd_vel" to="robot0/cmd_vel" />
+	</node>
+
+	<!-- Start quadrille for other robots: -->
+
+	<node pkg="quadrille" type="quadrille.py" name="quadrille1">
+	<remap from="cmd_vel" to="robot1/cmd_vel" />
+	</node>
+	<node pkg="quadrille" type="quadrille.py" name="quadrille2">
+	<remap from="cmd_vel" to="robot2/cmd_vel" />
+	</node>	
+	<node pkg="quadrille" type="quadrille.py" name="quadrille3">
+	<remap from="cmd_vel" to="robot3/cmd_vel" />
+	</node>
+
+</launch>
